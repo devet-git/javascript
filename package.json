@@ -1,26 +1,33 @@
 {
-  "name": "api-setup",
+  "name": "mvc_nodejs",
   "version": "1.0.0",
   "description": "Set up an API with expressjs",
   "main": "server.js",
-  "type": "module",
   "scripts": {
-    "start": "nodemon --exec babel-node ./src/server"
+    "start": "nodemon --exec babel-node ./src/server",
+    "gen-migration": "npx sequelize-cli migration:generate --name",
+    "run-migration": "npx sequelize-cli db:migrate",
+    "gen-seed": "npx sequelize-cli seed:generate --name",
+    "run-all-seeds": "npx sequelize-cli db:seed:all",
+    "run-seed": "npx sequelize-cli db:seed --seed "
   },
   "keywords": [
     "devet",
-    "api-setup"
+    "mvc_nodejs"
   ],
   "author": "Devet",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/node": "^7.18.10",
-    "@babel/preset-env": "^7.18.10"
+    "@babel/preset-env": "^7.18.10",
+    "sequelize-cli": "^6.4.1"
   }
 }
